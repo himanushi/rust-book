@@ -12,6 +12,8 @@ fn main() {
 
     io::stdin().read_line(&mut guess).expect("aaa");
 
+    let guess: u32 = guess.trim().parse().expect("error");
+
     println!("You guessed: {}", guess);     // 次のように予想しました: {}
 
     match guess.cmp(&secret_number) {
