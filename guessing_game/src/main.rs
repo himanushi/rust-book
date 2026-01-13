@@ -1,24 +1,28 @@
-use std::{cmp::Ordering, io};
 use rand::Rng;
+use std::{cmp::Ordering, io};
 
 fn main() {
-    println!("Guess the number!");          // 数を当ててごらん
+    println!("Guess the number!"); // 数を当ててごらん
 
     let secret_number = rand::thread_rng().gen_range(1..10);
 
-    println!("The secret number is: {}", secret_number);   // ほら、予想を入力してね
+    println!("The secret number is: {}", secret_number); // ほら、予想を入力してね
 
-    let mut guess = String::new();
+    loop {
+        println!("Please input your guess.");
 
-    io::stdin().read_line(&mut guess).expect("aaa");
+        let mut guess = String::new();
 
-    let guess: u32 = guess.trim().parse().expect("error");
+        io::stdin().read_line(&mut guess).expect("error1");
 
-    println!("You guessed: {}", guess);     // 次のように予想しました: {}
+        let guess: u32 = guess.trim().parse().expect("error2");
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You win!"),
+        println!("You guessed: {}", guess); // 次のように予想しました: {}
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => println!("You win!"),
+        }
     }
 }
