@@ -15,7 +15,10 @@ fn main() {
 
         io::stdin().read_line(&mut guess).expect("error1");
 
-        let guess: u32 = guess.trim().parse().expect("error2");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("You guessed: {}", guess); // 次のように予想しました: {}
 
