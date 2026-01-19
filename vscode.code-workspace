@@ -7,6 +7,10 @@
       "name": "variables",
       "path": "./variables",
     },
+    {
+      "name": "ownership",
+      "path": "./ownership",
+    },
   ],
   "settings": {
     "editor.formatOnSave": true,
