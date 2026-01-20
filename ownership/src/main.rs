@@ -1,24 +1,27 @@
 fn main() {
-    let s = String::from("hello"); // s comes into scope
+    let s1 = gives_ownership(); // gives_ownershipは、戻り値をs1に
+    // ムーブする
 
-    takes_ownership(s); // s's value moves into the function...
-    // ... and so is no longer valid here
+    let s2 = String::from("hello"); // s2がスコープに入る
 
-    let x = 5; // x comes into scope
+    let s3 = takes_and_gives_back(s2); // s2はtakes_and_gives_backにムーブされ
+    // 戻り値もs3にムーブされる
+} // ここで、s3はスコープを抜け、ドロップされる。s2もスコープを抜けるが、ムーブされているので、
+// 何も起きない。s1もスコープを抜け、ドロップされる。
 
-    makes_copy(x); // Because i32 implements the Copy trait,
-    // x does NOT move into the function,
-    // so it's okay to use x afterward.
-} // Here, x goes out of scope, then s. However, because s's value was moved,
-// nothing special happens.
+fn gives_ownership() -> String {
+    // gives_ownershipは、戻り値を
+    // 呼び出した関数にムーブする
 
-fn takes_ownership(some_string: String) {
-    // some_string comes into scope
-    println!("{some_string}");
-} // Here, some_string goes out of scope and `drop` is called. The backing
-// memory is freed.
+    let some_string = String::from("hello"); // some_stringがスコープに入る
 
-fn makes_copy(some_integer: i32) {
-    // some_integer comes into scope
-    println!("{some_integer}");
-} // Here, some_integer goes out of scope. Nothing special happens.
+    some_string // some_stringが返され、呼び出し元関数に
+    // ムーブされる
+}
+
+// takes_and_gives_backは、Stringを一つ受け取り、返す。
+fn takes_and_gives_back(a_string: String) -> String {
+    // a_stringがスコープに入る。
+
+    a_string // a_stringが返され、呼び出し元関数にムーブされる
+}
