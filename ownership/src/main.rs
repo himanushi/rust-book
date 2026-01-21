@@ -1,7 +1,9 @@
 fn main() {
     let s = String::from("test aaa");
     let len = first_word(&s);
-    println!("{len}")
+    println!("{len}");
+
+    let slice = &s[..];
 }
 
 fn first_word(s: &String) -> usize {
