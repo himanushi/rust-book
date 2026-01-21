@@ -1,10 +1,9 @@
 fn main() {
-    let s1 = String::from("hello");
-    let len = calc_len(&s1);
+    let s = String::from("hello");
 
-    println!("{s1} は {len} 個");
+    change(&s);
 }
 
-fn calc_len(s: &String) -> usize {
-    s.len()
+fn change(some_string: &String) {
+    some_string.push_str(", world");
 }
