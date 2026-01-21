@@ -1,7 +1,8 @@
 fn main() {
-    let s = String::from("test aaa");
-    let len = first_word(&s);
-    println!("{len}");
+    let mut s = String::from("test aaa");
+    let word = first_word(&s);
+    s.clear();
+    println!("{word}");
 }
 
 fn first_word(s: &String) -> &str {
