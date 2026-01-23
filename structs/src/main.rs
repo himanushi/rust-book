@@ -23,6 +23,8 @@ fn main() {
         ..user1
     };
 
+    let black = Color(0, 0, 0);
+
     println!("Hello, world!");
 }
 
