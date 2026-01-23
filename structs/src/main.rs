@@ -5,6 +5,8 @@ struct User {
     active: bool,
 }
 
+struct Color(i32, i32, i32);
+
 fn main() {
     let mut user1 = User {
         email: String::from("someone@example.com"),
@@ -18,8 +20,7 @@ fn main() {
     let user2 = User {
         email: String::from("another@example.com"),
         username: String::from("anotherusername567"),
-        active: user1.active,
-        sign_in_count: user1.sign_in_count,
+        ..user1
     };
 
     println!("Hello, world!");
