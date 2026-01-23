@@ -11,6 +11,10 @@
       "name": "ownership",
       "path": "./ownership",
     },
+    {
+      "name": "structs",
+      "path": "./structs",
+    },
   ],
   "settings": {
     "editor.formatOnSave": true,
