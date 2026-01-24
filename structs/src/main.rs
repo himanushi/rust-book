@@ -1,20 +1,10 @@
 fn main() {
-    let mut user1 = User {
-        email: String::from("someone@example.com"),
-        username: String::from("someusername123"),
-        active: true,
-        sign_in_count: 1,
-    };
+    let width1 = 30;
+    let height1 = 50;
 
-    user1.username = String::from("someusername");
+    println!("aaa {}", area(width, height))
+}
 
-    let user2 = User {
-        email: String::from("another@example.com"),
-        username: String::from("anotherusername567"),
-        ..user1
-    };
-
-    let black = Color(0, 0, 0);
-
-    println!("Hello, world!");
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
