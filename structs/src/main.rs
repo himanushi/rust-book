@@ -1,12 +1,3 @@
-struct User {
-    username: String,
-    email: String,
-    sign_in_count: u64,
-    active: bool,
-}
-
-struct Color(i32, i32, i32);
-
 fn main() {
     let mut user1 = User {
         email: String::from("someone@example.com"),
@@ -26,13 +17,4 @@ fn main() {
     let black = Color(0, 0, 0);
 
     println!("Hello, world!");
-}
-
-fn build_user(email: String, username: String) -> User {
-    User {
-        email,
-        username,
-        active: true,
-        sign_in_count: 1,
-    }
 }
