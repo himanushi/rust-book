@@ -1,10 +1,9 @@
 fn main() {
-    let width1 = 30;
-    let height1 = 50;
+    let rect = (30, 50);
 
-    println!("aaa {}", area(width1, height1))
+    println!("aaa {}", area(rect))
 }
 
-fn area(width: u32, height: u32) -> u32 {
-    width * height
+fn area(rect: (u32, u32)) -> u32 {
+    rect.0 * rect.1
 }
