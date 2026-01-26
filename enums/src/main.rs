@@ -17,7 +17,7 @@ fn value_in_cents(coin: Coin) -> u32 {
         Coin::Penny => 1,
         Coin::Nickel => 5,
         Coin::Dime => 10,
-        Coin::Quarter => 25,
+        Coin::Quarter(&state) => 25,
     }
 }
 
