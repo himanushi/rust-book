@@ -1,8 +1,15 @@
+#[derive(Debug)] // すぐに州を点検できるように
+enum UsState {
+    Alabama,
+    Alaska,
+    // ... などなど
+}
+
 enum Coin {
     Penny,
     Nickel,
     Dime,
-    Quarter,
+    Quarter(UsState),
 }
 
 fn value_in_cents(coin: Coin) -> u32 {
