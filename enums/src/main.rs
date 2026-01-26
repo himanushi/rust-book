@@ -24,4 +24,12 @@ fn value_in_cents(coin: Coin) -> u32 {
     }
 }
 
-fn main() {}
+fn main() {
+    let coin = Coin::Penny;
+    let mut count = 0;
+    match coin {
+        // {:?}州のクォーターコイン
+        Coin::Quarter(state) => println!("State quarter from {:?}!", state),
+        _ => count += 1,
+    }
+}
