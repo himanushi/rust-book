@@ -19,10 +19,6 @@
       "name": "enums",
       "path": "./enums",
     },
-    {
-      "name": "match2",
-      "path": "./match2",
-    },
   ],
   "settings": {
     "editor.formatOnSave": true,
