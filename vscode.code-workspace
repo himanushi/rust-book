@@ -19,6 +19,10 @@
       "name": "enums",
       "path": "./enums",
     },
+    {
+      "name": "modules",
+      "path": "./modules",
+    },
   ],
   "settings": {
     "editor.formatOnSave": true,
