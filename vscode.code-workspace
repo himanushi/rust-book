@@ -23,6 +23,10 @@
       "name": "modules",
       "path": "./modules",
     },
+    {
+      "name": "restaurant",
+      "path": "./restaurant",
+    },
   ],
   "settings": {
     "editor.formatOnSave": true,
