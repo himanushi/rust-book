@@ -1,10 +1,5 @@
 fn main() {
-    let v: Vec<i32> = Vec::new();
-    let mut v: Vec<i32> = vec![];
-    v.push(5);
-    v.push(6);
-    v.push(7);
-    v.push(8);
-
-    println!("Hello, world!");
+    let v = vec![1];
+    let one = v[0];
+    println!("Hello, world! {}", one);
 }
