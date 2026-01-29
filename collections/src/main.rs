@@ -1,5 +1,6 @@
 fn main() {
-    let v = vec![1];
-    let v2 = v[0];
-    let v3 = v[0];
+    let v = vec![1, 2, 3, 4, 5];
+
+    let does_not_exist = &v[100];
+    let does_not_exist = v.get(100);
 }
