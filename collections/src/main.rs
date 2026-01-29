@@ -1,5 +1,5 @@
 fn main() {
     let v = vec![1];
-    let one = &v[1];
-    println!("Hello, world! {}", one);
+    let v2 = v[0];
+    let v3 = v[0];
 }
