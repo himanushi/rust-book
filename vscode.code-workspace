@@ -4,28 +4,8 @@
       "path": "./",
     },
     {
-      "name": "variables",
-      "path": "./variables",
-    },
-    {
-      "name": "ownership",
-      "path": "./ownership",
-    },
-    {
-      "name": "structs",
-      "path": "./structs",
-    },
-    {
-      "name": "enums",
-      "path": "./enums",
-    },
-    {
-      "name": "modules",
-      "path": "./modules",
-    },
-    {
-      "name": "restaurant",
-      "path": "./restaurant",
+      "name": "collections",
+      "path": "./collections",
     },
   ],
   "settings": {
