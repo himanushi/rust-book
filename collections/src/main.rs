@@ -3,7 +3,7 @@ fn main() {
 
     let first = &v[0];
 
-    v.push(6);
-
     println!("The first element is: {}", first);
+
+    v.push(6);
 }
