@@ -1,3 +1,3 @@
 fn main() {
-    let s = "aa";
+    let mut s = String::new();
 }
