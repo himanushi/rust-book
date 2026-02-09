@@ -24,7 +24,6 @@ fn main() {
 pub trait Summary {
     fn summarize(&self) -> String;
 }
-
 pub struct NewsArticle {
     pub headline: String,
     pub location: String,
@@ -43,4 +42,10 @@ pub struct Tweet {
     pub content: String,
     pub reply: bool,
     pub retweet: bool,
+}
+
+impl Summary for Tweet {
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.username, self.content)
+    }
 }
