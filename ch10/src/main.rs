@@ -20,3 +20,16 @@ fn main() {
 
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
 }
+
+pub trait Summary {
+    fn summarize(&self) -> String;
+}
+
+pub struct NewsArticle {
+    pub headline: String,
+    pub location: String,
+    pub author: String,
+    pub content: String,
+}
+
+impl Summary for NewsArticle {}
