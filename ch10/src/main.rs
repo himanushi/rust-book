@@ -13,12 +13,17 @@ impl<T, U> Point<T, U> {
 }
 
 fn main() {
-    let p1 = Point { x: 5, y: 10.4 };
-    let p2 = Point { x: "Hello", y: 'c' };
+    let tweet = Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from(
+            // もちろん、ご存知かもしれませんがね、みなさん
+            "of course, as you probably already know, people",
+        ),
+        reply: false,
+        retweet: false,
+    };
 
-    let p3 = p1.mixup(p2);
-
-    println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
+    println!("1 new tweet: {}", tweet.summarize());
 }
 
 pub trait Summary {
