@@ -31,9 +31,11 @@ fn main() {
 }
 
 pub trait Summary {
+    fn summarize_author(&self) -> String;
+
     fn summarize(&self) -> String {
-        // "（もっと読む）"
-        String::from("(Read more...)")
+        // "（{}さんの文章をもっと読む）"
+        format!("(Read more from {}...)", self.summarize_author())
     }
 }
 
@@ -58,7 +60,7 @@ pub struct Tweet {
 }
 
 impl Summary for Tweet {
-    fn summarize(&self) -> String {
-        format!("{}: {}", self.username, self.content)
+    fn summarize_author(&self) -> String {
+        format!("@{}", self.username)
     }
 }
