@@ -27,10 +27,6 @@ impl Product for GeneralItem {
     fn tax_rate(&self) -> f64 {
         1.1
     }
-
-    fn final_price(&self) -> f64 {
-        self.price * self.tax_rate()
-    }
 }
 
 struct FoodItem {
@@ -49,10 +45,6 @@ impl Product for FoodItem {
 
     fn tax_rate(&self) -> f64 {
         1.08
-    }
-
-    fn final_price(&self) -> f64 {
-        self.price * self.tax_rate()
     }
 }
 
