@@ -7,6 +7,10 @@
       "name": "ch10",
       "path": "./ch10",
     },
+    {
+      "name": "claude",
+      "path": "./claude",
+    },
   ],
   "settings": {
     "editor.formatOnSave": true,
