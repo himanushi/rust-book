@@ -4,6 +4,14 @@ struct GeneralItem {
 }
 
 impl GeneralItem {
+    fn name(&self) -> &String {
+        &self.name
+    }
+
+    fn price(&self) -> f64 {
+        self.price
+    }
+
     fn tax_rate(&self) -> f64 {
         1.1
     }
@@ -28,6 +36,12 @@ impl FoodItem {
     }
 }
 
+fn print_receipt(item: &GeneralItem) {
+    println!("商品: {}", item.name());
+    println!("  税抜き: {}円", item.price());
+    println!("  税込み: {}円", item.final_price());
+}
+
 fn main() {
     let note_pc = GeneralItem {
         name: String::from("ノートPC"),
@@ -39,10 +53,6 @@ fn main() {
     };
 
     println!("--- レシート ---");
-    println!("商品: {}", note_pc.name);
-    println!("  税抜き: {}円", note_pc.price);
-    println!("  税込み: {}円", note_pc.final_price());
-    println!("商品: {}", bento.name);
-    println!("  税抜き: {}円", bento.price);
-    println!("  税込み: {}円", bento.final_price());
+    print_receipt(&note_pc);
+    print_receipt(&bento);
 }
