@@ -1,59 +1,40 @@
-trait Animal {
-    fn name(&self) -> &str;
-    fn speak(&self) -> &str;
-
-    // デフォルト実装（Dogだけ上書きする）
-    fn is_loud(&self) -> bool {
-        false
-    }
-}
-
-struct Dog {
+struct GeneralItem {
     name: String,
+    price: f64,
 }
 
-impl Animal for Dog {
-    fn name(&self) -> &str {
-        &self.name
+impl GeneralItem {
+    fn tax_rate(&self) -> f64 {
+        1.1
     }
-    fn speak(&self) -> &str {
-        "ワンワン！"
-    }
-    fn is_loud(&self) -> bool {
-        true // Dogだけ上書き
+
+    fn final_price(&self) -> f64 {
+        self.price * self.tax_rate()
     }
 }
 
-struct Cat {
+struct FoodItem {
     name: String,
+    price: f64,
 }
 
-impl Animal for Cat {
-    fn name(&self) -> &str {
-        &self.name
+impl FoodItem {
+    fn tax_rate(&self) -> f64 {
+        1.08
     }
-    fn speak(&self) -> &str {
-        "ニャー"
-    }
-    // is_loud はデフォルトの false がそのまま使われる
-}
 
-// トレイト境界を使ったジェネリック関数
-fn introduce<T: Animal>(animal: &T) {
-    println!("{}の自己紹介: {}", animal.name(), animal.speak());
+    fn final_price(&self) -> f64 {
+        self.price * self.tax_rate()
+    }
 }
 
 fn main() {
-    let dog = Dog {
-        name: String::from("ポチ"),
+    let note_pc = GeneralItem {
+        name: String::from("ノートPC"),
+        price: 1000.0,
     };
-    let cat = Cat {
-        name: String::from("タマ"),
+    let bento = FoodItem {
+        name: String::from("お弁当"),
+        price: 500.0,
     };
-
-    introduce(&dog);
-    introduce(&cat);
-
-    println!("{}はうるさい？ {}", dog.name(), dog.is_loud());
-    println!("{}はうるさい？ {}", cat.name(), cat.is_loud());
 }
