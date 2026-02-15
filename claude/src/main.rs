@@ -1,5 +1,5 @@
 trait Product {
-    fn name(&self) -> &String;
+    fn name(&self) -> &str;
 
     fn price(&self) -> f64;
 
@@ -16,7 +16,7 @@ struct GeneralItem {
 }
 
 impl Product for GeneralItem {
-    fn name(&self) -> &String {
+    fn name(&self) -> &str {
         &self.name
     }
 
@@ -35,7 +35,7 @@ struct FoodItem {
 }
 
 impl Product for FoodItem {
-    fn name(&self) -> &String {
+    fn name(&self) -> &str {
         &self.name
     }
 
