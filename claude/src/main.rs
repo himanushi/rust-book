@@ -1,9 +1,21 @@
+trait Product {
+    fn name(&self) -> &String;
+
+    fn price(&self) -> f64;
+
+    fn tax_rate(&self) -> f64;
+
+    fn final_price(&self) -> f64 {
+        self.price() * self.tax_rate()
+    }
+}
+
 struct GeneralItem {
     name: String,
     price: f64,
 }
 
-impl GeneralItem {
+impl Product for GeneralItem {
     fn name(&self) -> &String {
         &self.name
     }
@@ -26,7 +38,15 @@ struct FoodItem {
     price: f64,
 }
 
-impl FoodItem {
+impl Product for FoodItem {
+    fn name(&self) -> &String {
+        &self.name
+    }
+
+    fn price(&self) -> f64 {
+        self.price
+    }
+
     fn tax_rate(&self) -> f64 {
         1.08
     }
@@ -36,7 +56,7 @@ impl FoodItem {
     }
 }
 
-fn print_receipt(item: &GeneralItem) {
+fn print_receipt<T: Product>(item: &T) {
     println!("商品: {}", item.name());
     println!("  税抜き: {}円", item.price());
     println!("  税込み: {}円", item.final_price());
