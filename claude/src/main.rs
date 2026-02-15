@@ -37,4 +37,12 @@ fn main() {
         name: String::from("お弁当"),
         price: 500.0,
     };
+
+    println!("--- レシート ---");
+    println!("商品: {}", note_pc.name);
+    println!("  税抜き: {}円", note_pc.price);
+    println!("  税込み: {}円", note_pc.final_price());
+    println!("商品: {}", bento.name);
+    println!("  税抜き: {}円", bento.price);
+    println!("  税込み: {}円", bento.final_price());
 }
