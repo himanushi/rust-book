@@ -2,14 +2,20 @@ trait Animal {
     fn name(&self) -> &str;
 }
 
-struct Dog;
+struct Dog {
+    name: String,
+}
+
 impl Animal for Dog {
     fn name(&self) -> &str {
         "ワンワン！"
     }
 }
 
-struct Cat;
+struct Cat {
+    name: String,
+}
+
 impl Animal for Cat {
     fn name(&self) -> &str {
         "ニャー"
@@ -17,6 +23,19 @@ impl Animal for Cat {
 }
 
 fn main() {
-    println!("ポチの自己紹介: {}", Dog.name());
+    let dog = Dog {
+        name: String::from("ワンワン"),
+    };
+    let cat = Cat {
+        name: String::from("ニャー"),
+    };
+
+    println!(
+        "ポチの自己紹介: {}",
+        Dog {
+            name: String::from("ワンワン")
+        }
+        .name()
+    );
     println!("タマの自己紹介: {}", Cat.name());
 }
